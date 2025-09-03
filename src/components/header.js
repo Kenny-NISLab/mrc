@@ -17,7 +17,7 @@ const en = {
   },
 };
 const ja = {
-  globalNav: { univ: "同志社大学", privacy: "個人情報保護について", sitemap: "サイトマップ", home: "Home" },
+  globalNav: { univ: "同志社大学", privacy: "個人情報保護について", sitemap: "サイトマップ", home: "トップページ" },
   logo: "/header/ja/logo.png",
   headerMenu: {
     about: "/header/ja/about.png",
@@ -46,6 +46,18 @@ export default function Header() {
       <div className="bg-headerbg text-white">
         <Container>
           <div className="flex flex-row-reverse items-center gap-x-3 py-3 text-sm mb-4 overflow-x-auto whitespace-nowrap">
+            {localeKey === "ja" ? (
+              <Link href={router.asPath} locale="en">
+                <a className="hover:underline shrink-0">English</a>
+              </Link>
+            ) : (
+              <Link href={router.asPath} locale="ja-JP">
+                <a className="hover:underline shrink-0">日本語</a>
+              </Link>
+            )}
+
+            <span className="text-white">|</span>
+
             <a href="https://www.doshisha.ac.jp/" target="_blank" rel="noopener noreferrer" className="hover:underline shrink-0">
               {t.globalNav.univ}
             </a>
