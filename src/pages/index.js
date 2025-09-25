@@ -18,21 +18,31 @@ export default function Home({ jbody, ebody }) {
       <Head>
         <title>{site_title}</title>
       </Head>
-      <picture>
-        <source
-          srcSet="/small_banner.png"
-          media="(max-width: 640px)"
-        />
-        <img
-          src="/banner.png"
-          alt="banner"
-          width={900}
-          height={303}
-          className="mb-6 w-full h-auto"
-          loading="eager"
-          decoding="async"
-        />
-      </picture>
+      <h1 style={{ display: "none" }}>{site_title}</h1>
+
+      <div className="my-2">
+        <div className="block sm:hidden flex justify-center">
+          <Image
+            src="/small_banner.png"
+            alt="small banner"
+            width={524}
+            height={303}
+            className="max-w-[524px] w-auto h-auto"
+            priority
+          />
+        </div>
+        <div className="hidden sm:block">
+          <Image
+            src="/banner.png"
+            alt="banner"
+            width={900}
+            height={303}
+            className="w-full h-auto"
+            priority
+          />
+        </div>
+      </div>
+
       <Content body={body} />
     </Layout>
   );

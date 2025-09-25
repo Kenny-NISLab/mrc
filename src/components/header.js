@@ -58,8 +58,19 @@ export default function Header() {
 
             <span className="text-white">|</span>
 
-            <a href="https://www.doshisha.ac.jp/" target="_blank" rel="noopener noreferrer" className="hover:underline shrink-0">
+            <a
+              href="https://www.doshisha.ac.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline shrink-0 inline-flex items-center gap-1"
+            >
               {t.globalNav.univ}
+              <Image
+                src="/icons/external-link-alt-solid.svg"
+                alt=""
+                width={12}
+                height={12}
+              />
             </a>
             <Link href="/privacy">
               <a className="hover:underline shrink-0">{t.globalNav.privacy}</a>
