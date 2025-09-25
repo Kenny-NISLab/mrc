@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { J_SITE_TITLE, E_SITE_TITLE } from "../lib/constants";
@@ -26,9 +27,11 @@ export default function Custom404() {
 
             <div className="flex flex-col items-center justify-center text-center py-5">
                 <p className="text-lg text-gray-600 mb-4">{message}</p>
-                <a href="/" className="text-blue-600 hover:underline">
-                    {locale === "ja-JP" ? "トップページへ" : "Go to Home"}
-                </a>
+                <Link href="/">
+                    <a className="text-blue-600 hover:underline">
+                        {locale === "ja-JP" ? "トップページへ" : "Go to Home"}
+                    </a>
+                </Link>
             </div>
         </Layout>
     );
